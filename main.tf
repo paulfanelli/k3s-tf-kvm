@@ -22,7 +22,7 @@ resource "libvirt_pool" "fedora_pool" {
 resource "libvirt_volume" "fedora_base" {
   name   = "fedora_base.qcow2"
   pool   = libvirt_pool.fedora_pool.name
-  source = "https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2"
+  source = var.base_image_path
   format = "qcow2"
 }
 
