@@ -50,6 +50,7 @@ resource "libvirt_domain" "fedora_vm" {
 
   network_interface {
     network_name = "default"
+    wait_for_lease = true  # This forces Terraform to wait for the IP
   }
 
   disk {
